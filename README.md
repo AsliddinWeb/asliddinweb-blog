@@ -1,19 +1,15 @@
-Birinchi o'rinda loyihani ko'chirib oling:
+Avval Github'dan omborni klonlang va yangi katalogga o'ting:
 
-git clone https://github.com/AsliddinWeb/asliddinweb-blog.git
+$ git clone git@github.com/USERNAME/{{ project_name }}.git
+$ cd {{ project_name }}
+Loyihangiz uchun virtualenvni faollashtiring.
 
-Papkaga kiring:
+Loyihaga bog'liqliklarni o'rnatish:
 
-cd asliddinweb-blog
+$ pip install -r requirements/local.txt
+Keyin shunchaki migratsiyalarni qo'llang:
 
-Kerakli paketlarni o'rnating:
+$ python manage.py migrate
+Endi siz ishlab chiqish serverini ishga tushirishingiz mumkin:
 
-pip install-r requirements.txt
-
-Modellarni migratsiya qiling:
-
-python manage.py migrate
-
-Hammasi tayyor endi serverni ishga tushuring:
-
-python manage.py runserver
+$ python manage.py runserver
