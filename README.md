@@ -1,15 +1,9 @@
-Avval Github'dan omborni klonlang va yangi katalogga o'ting:
+git clone https://github.com/AsliddinWeb/asliddinweb-blog.git
 
-$ git clone git@github.com/USERNAME/{{ project_name }}.git
-$ cd {{ project_name }}
-Loyihangiz uchun virtualenvni faollashtiring.
+cd asliddinweb-blog
 
-Loyihaga bog'liqliklarni o'rnatish:
+pip install -r requirements/local.txt
 
-$ pip install -r requirements/local.txt
-Keyin shunchaki migratsiyalarni qo'llang:
+python manage.py migrate
 
-$ python manage.py migrate
-Endi siz ishlab chiqish serverini ishga tushirishingiz mumkin:
-
-$ python manage.py runserver
+python manage.py runserver
