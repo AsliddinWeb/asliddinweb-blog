@@ -1,0 +1,23 @@
+<div class="sidebar">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="sidebar-item recent-posts" style="margin-top: 0;">
+                    <div class="sidebar-heading">
+                      <h2>Oxirgi Bloglar</h2>
+                    </div>
+                    <div class="content">
+                      <ul>
+                          {% for blog in blogs %}
+                            <li>
+                                <a href="{% url 'blog_page' blog.slug %}">
+                                  <h5>{{ blog.title }}</h5>
+                                  <span>{{ blog.created_on }}</span>
+                                </a>
+                            </li>
+                          {% endfor %}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>

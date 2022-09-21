@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %} AsliddinWeb | Blog {% endblock %}
+
+{% block content %}
+  <div class="all-blog-posts">
+    <div class="row">
+      {% for blog in blogs %}
+        <div class="col-lg-6">
+        <div class="blog-post">
+          <div class="blog-thumb">
+            <img src="/media/{{ blog.image }}" alt="photo">
+          </div>
+          <div class="down-content">
+            <a href="{% url 'blog_page' blog.slug %}"><span>{{ blog.title }}</span></a>
+            <ul class="post-info" style="margin-top: 1rem;">
+              <li>{{blog.writer}}</li>
+              <li>{{blog.created_on}}</li>
+            </ul>
+            <h4 class="post-body">{{blog.body|truncatewords:20|linebreaks}}</h4>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+ </div>
+
+{% include "paginator.html" with page=page_obj %}
+{% endblock %}
